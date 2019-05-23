@@ -1,15 +1,6 @@
 import '../model/misc.dart';
 
-const List<BoardVector> flipVectorList = const [
-  BoardVector(0, -1), // Top
-  BoardVector(1, -1), // Top-Right
-  BoardVector(1, 0), // Right
-  BoardVector(1, 1), // Bottom-Right
-  BoardVector(0, 1), // Bottom
-  BoardVector(-1, 1), // Bottom-Left
-  BoardVector(-1, 0), // Left
-  BoardVector(-1, -1), // Top-Left
-];
+import '../constants/constants.dart';
 
 List<List<StoneType>> getNewBoard(size) {
   if (size < 3) return null;
@@ -111,7 +102,7 @@ class BoardModel {
     if (getAt(pos) != StoneType.empty) return false;
 
     final flipList = List<BoardCoordinates>();
-    flipVectorList.forEach((vector) {
+    FLIP_VECTOR_LIST.forEach((vector) {
       flipList.addAll(_getFlipsByVector(pos, vector));
     });
 

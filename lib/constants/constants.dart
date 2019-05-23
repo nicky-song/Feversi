@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../model/misc.dart';
+
 class GameConfig {
   static const int primaryColor = 0xFF174378;
   static const double scoreStoneRatio = 0.14;
@@ -35,3 +37,14 @@ class FooterTheme {
     fontWeight: FontWeight.bold,
   );
 }
+
+const List<BoardVector> FLIP_VECTOR_LIST = const [
+  BoardVector(0, -1), // Top
+  BoardVector(1, -1), // Top-Right
+  BoardVector(1, 0), // Right
+  BoardVector(1, 1), // Bottom-Right
+  BoardVector(0, 1), // Bottom
+  BoardVector(-1, 1), // Bottom-Left
+  BoardVector(-1, 0), // Left
+  BoardVector(-1, -1), // Top-Left
+];
